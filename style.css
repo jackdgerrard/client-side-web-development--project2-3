@@ -3,13 +3,9 @@
    margin: 0;
    font-family: 'Quicksand', sans-serif;
    font-size:16px;
-
-
 }
 
-h1, h2, h3, h4, h5{
-   font-family: 'Cabin', sans-serif;
-}
+h1, h2, h3, h4, h5{font-family: 'Cabin', sans-serif;}
 
 h1{
     font-size: 5em;
@@ -19,14 +15,15 @@ h1{
 h2{
     font-size: 3em;
     color: grey;
+    padding-left: 1em;
+    padding-top: 1em;
 }
 
-p{
-    color: grey;
-
+#menu{
+    display: none;
 }
 
-
+p{color: grey}
 
 header{
    width:100%;
@@ -42,3 +39,50 @@ article p{
     column-count: 1;
 }
 
+nav ul{
+    list-style-type: none;
+}
+
+nav ul li{
+ text-decoration: none;
+ width:100%;
+ background-position: clear;
+ padding: 1em;
+
+}
+nav ul li:nth-child(1){
+    background-image: url('images/1.jpg');
+}
+nav ul li:nth-child(2){
+    background-image: url('images/2.jpg');
+}
+nav ul li:nth-child(3){background-image: url('images/3.jpg');}
+
+nav ul li:hover {
+    background-image:
+}
+
+aside .social {
+    display: block;c
+}
+
+aside{
+    float:right;
+    background-color:black;
+}
+
+@media only screen and (min-width : 600px) {
+
+   article p{column-count: 2;}
+
+
+    }
+
+@media only screen and (min-width : 800px) {
+    article p{column-count: 3;}
+
+        }
+
+@media only screen and (min-width : 1000px) {
+
+    }
