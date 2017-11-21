@@ -2,11 +2,31 @@
    box-sizing: border-box;
    margin: 0;
    font-family: 'Quicksand', sans-serif;
+   font-size:16px;
+
+
 }
 
 h1, h2, h3, h4, h5{
    font-family: 'Cabin', sans-serif;
 }
+
+h1{
+    font-size: 5em;
+    padding-left:1em;
+}
+
+h2{
+    font-size: 3em;
+    color: grey;
+}
+
+p{
+    color: grey;
+
+}
+
+
 
 header{
    width:100%;
@@ -15,4 +35,10 @@ header{
 }
 
 header #menu-button, header h1{display: inline-block}
+header #menu-button{font-size: 3em;}
+
+article p{
+    padding: 1em;
+    column-count: 1;
+}
 
