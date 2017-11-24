@@ -5,6 +5,12 @@
    font-size:16px;
 }
 
+.container{margin: auto;}
+
+/*******
+** h tags
+*********/
+
 h1, h2, h3, h4, h5{font-family: 'Cabin', sans-serif;}
 
 h1{
@@ -15,55 +21,104 @@ h1{
 h2{
     font-size: 3em;
     color: grey;
-    padding-left: 1em;
-    padding-top: 1em;
+    padding: 1em, 0, 0, 1em;
 }
 
-#menu{
-    display: none;
+
+
+/*******
+** header, nav menu
+********/
+#menu{display: none;}
+
+#menu ul{
+  list-style-type: none;
 }
 
-p{color: grey}
+#menu ul li{
+  width:100%;
+  background-color:black;
+  color:white;
+  padding:1em;
+  display: inline-block;
+  border: 1px 1px 0 1px solid white;
+}
+
+
 
 header{
    width:100%;
    background-color:black;
-   color:white;
+   color: white;
+   padding: 1em;
 }
 
 header #menu-button, header h1{display: inline-block}
 header #menu-button{font-size: 3em;}
 
+
+/**********
+** main body
+**********/
+
 article p{
+    color: grey
     padding: 1em;
     column-count: 1;
 }
 
+
+/***********
+** Nav (I did the cast with a single color gradient in the background)
+************/
+ul{ padding-left:0;}
 nav ul{
     list-style-type: none;
 }
 
 nav ul li{
- text-decoration: none;
  width:100%;
- background-position: clear;
  padding: 1em;
+ display: inline-block;
+ font-size: 3em;
+
+
+/* background*/
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-origin: content-box;
 
 }
+
 nav ul li:nth-child(1){
-    background-image: url('images/1.jpg');
-}
-nav ul li:nth-child(2){
-    background-image: url('images/2.jpg');
-}
-nav ul li:nth-child(3){background-image: url('images/3.jpg');}
+  background: linear-gradient(rgba(128,128,128, 0.8), rgba(128, 128, 128, 0.8)) , url(images/1.jpg);
+ }
+nav ul li:nth-child(1):hover{
+  background:linear-gradient(rgba(255, 0, 0, 0.3), rgba(255,0,0, .3)), url(images/1.jpg);
+ }
 
-nav ul li:hover {
-    background-image:
-}
+ nav ul li:nth-child(2){
+   background: linear-gradient(rgba(128,128,128, 0.8), rgba(128, 128, 128, 0.8)) , url(images/2.jpg);
+  }
+ nav ul li:nth-child(2):hover{
+   background:linear-gradient(rgba(255, 0, 0, 0.3), rgba(255,0,0, .3)), url(images/2.jpg);
+  }
+  nav ul li:nth-child(3){
+    background: linear-gradient(rgba(128,128,128, 0.8), rgba(128, 128, 128, 0.8)) , url(images/3.jpg);
+   }
+  nav ul li:nth-child(3):hover{
+    background:linear-gradient(rgba(255, 0, 0, 0.3), rgba(255,0,0, .3)), url(images/3.jpg);
+   }
+
+
+
+/**********
+** social media icons
+**********/
 
 aside .social {
-    display: block;c
+    display: block;
 }
 
 aside{
@@ -71,16 +126,34 @@ aside{
     background-color:black;
 }
 
+/***********
+** Media Queries
+************/
+
 @media only screen and (min-width : 600px) {
+
+  .container{width:90%;}
+  h1{padding:0;}
 
    article p{column-count: 2;}
 
+   #menu{display: block;}
+
+   header #menu-button{display: none;}
+
+   #menu ul li{width:24%}
+
+  nav ul li:nth-child(2), nav ul li:nth-child(3){width:49.3%}
 
     }
 
 @media only screen and (min-width : 800px) {
+  #container{width:70%;}
     article p{column-count: 3;}
+    nav ul li{width:32%;}
 
+    aside{top:0;}
+    aside .social{display: inline;}
         }
 
 @media only screen and (min-width : 1000px) {
