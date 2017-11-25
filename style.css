@@ -5,7 +5,10 @@
    font-size:16px;
 }
 
-.container{margin: auto;}
+.container{
+  margin: auto;
+  width:100%;
+}
 
 /*******
 ** h tags
@@ -14,7 +17,7 @@
 h1, h2, h3, h4, h5{font-family: 'Cabin', sans-serif;}
 
 h1{
-    font-size: 5em;
+    font-size: 4em;
     padding-left:1em;
 }
 
@@ -62,7 +65,7 @@ header #menu-button{font-size: 3em;}
 **********/
 
 article p{
-    color: grey
+    color: grey;
     padding: 1em;
     column-count: 1;
 }
@@ -87,8 +90,6 @@ nav ul li{
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  background-origin: content-box;
-
 }
 
 nav ul li:nth-child(1){
@@ -143,7 +144,7 @@ aside{
 
    #menu ul li{width:24%}
 
-  nav ul li:nth-child(2), nav ul li:nth-child(3){width:49.3%}
+  nav ul li:nth-child(2), nav ul li:nth-child(3){width:50%}
 
     }
 
@@ -152,7 +153,10 @@ aside{
     article p{column-count: 3;}
     nav ul li{width:32%;}
 
-    aside{top:0;}
+    aside{
+      top:0;
+      float: right;
+    }
     aside .social{display: inline;}
         }
 
