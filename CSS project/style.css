@@ -1,0 +1,165 @@
+*{
+   margin: 0;
+   font-family: 'Quicksand', sans-serif;
+}
+
+.container{
+  margin: auto;
+  width:100%;
+  box-sizing: border-box;
+}
+
+/*******
+** h tags
+*********/
+
+h1, h2, h3, h4, h5{font-family: 'Cabin', sans-serif;}
+
+h1{
+    font-size: 4em;
+    padding-left:1em;
+}
+
+h2{
+    font-size: 3em;
+    color: grey;
+    padding: 1em, 0, 0, 1em;
+}
+
+
+
+/*******
+** header, nav menu
+********/
+#menu{
+  width:100%;
+  display: none;
+}
+
+#menu ul{list-style-type: none;}
+
+#menu ul li{
+  width:100%;
+  background-color:black;
+  color:white;
+  padding:1em;
+  display: inline-block;
+}
+
+
+
+header{
+   width:100%;
+   background-color:black;
+   color: white;
+   padding: 1em;
+}
+
+header #menu-button, header h1{display: inline-block}
+header #menu-button{font-size: 3em;}
+
+
+/**********
+** main body
+**********/
+
+article p{
+    color: grey;
+    padding: 1.3em;
+    column-count: 1;
+}
+
+
+/***********
+** Nav (I did the cast with a single color gradient in the background)
+************/
+nav{width:100%;}
+
+ul{
+  padding-left:0;
+  list-style-type: none;
+}
+
+nav ul li{
+ width:100%;
+ padding: 1em;
+ display: inline-block;
+ font-size: 2.5em;
+
+/* background*/
+  background-repeat: no-repeat;
+  background-clip: padding-box;
+}
+
+nav ul li:nth-child(1){
+  background: linear-gradient(rgba(128,128,128, 0.8), rgba(128, 128, 128, 0.8)) , url(images/1.jpg);
+ }
+nav ul li:nth-child(1):hover{
+  background:linear-gradient(rgba(255, 0, 0, 0.3), rgba(255, 0, 0, .3)), url(images/1.jpg);
+ }
+
+ nav ul li:nth-child(2){
+   background: linear-gradient(rgba(128,128,128, 0.8), rgba(128, 128, 128, 0.8)) , url(images/2.jpg);
+  }
+ nav ul li:nth-child(2):hover{
+   background:linear-gradient(rgba(255, 0, 0, 0.3), rgba(255, 0, 0, .3)), url(images/2.jpg);
+  }
+  nav ul li:nth-child(3){background: linear-gradient(rgba(128,128,128, 0.8), rgba(128, 128, 128, 0.8)) , url(images/3.jpg);}
+
+  nav ul li:nth-child(3):hover{background:linear-gradient(rgba(255, 0, 0, 0.3), rgba(255,0,0, .3)), url(images/3.jpg);}
+
+
+
+/**********
+** social media icons
+**********/
+
+aside .social {
+    display: block;
+}
+
+aside{
+    float:right;
+    background-color:black;
+}
+
+/***********
+** Media Queries
+************/
+
+@media only screen and (min-width : 600px) {
+
+  .container{width:90%;}
+  h1{padding:0;}
+
+   article p{column-count: 2;}
+
+   #menu{display: block;}
+
+   header #menu-button{display: none;}
+
+   #menu ul li{
+     margin:0;
+      width:23%;
+      display:inline-block;
+    }
+
+  nav ul li:nth-child(2), nav ul li:nth-child(3){width:50%}
+
+    }
+
+@media only screen and (min-width : 800px) {
+  #container{width:70%;}
+    article p{column-count: 3;}
+    nav ul li{width:33%;}
+
+    aside{
+      top:0;
+      position: fixed;
+    }
+    aside .social{display: inline;}
+        }
+
+@media only screen and (min-width : 1000px) {
+
+    }
