@@ -1,5 +1,6 @@
-<html lang="en">
+<!DOCTYPEhtml>
 
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
@@ -10,7 +11,7 @@
 
 <body id="body" class="themeRed themeBlue themeBlack">
 
-    <img id="settingsGear" src="images/gearson.png" alt="gear icon" />
+    <div id="settingsGear"></div>
 
     <div id="menu" class='hidden'>
         <p>Theme: </p>
@@ -24,7 +25,10 @@
 
     <div id="cards" ></div>
 
-    <img id="queenSpeach" src="images/bigqueen-transparent.png">
+    <div id="queentainer">
+        <span id="queenSpeach" ></span>
+        <img src="images/bigqueen-transparent.png">
+    </div>
 
     <button id="shuffle" onclick="dealCards()">shuffle cards</button>
 

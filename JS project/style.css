@@ -25,7 +25,7 @@
 }
 
 #cards{
-   width:60%;
+   width:70%;
    margin:auto;
    background: url('images/background.png') rgba(30, 172, 160, 0.5);
    display:flex;
@@ -33,11 +33,20 @@
    flex-wrap: wrap;
 }
 
-#queenSpeach{
+#cards img{
+   cursor: pointer;
+}
+
+#queentainer{
    float:right;
    position:fixed;
    margin-top: 400px;
-   margin-left: 85%;;
+   margin-left: 85%;
+}
+
+#queenSpeach{
+   background: white;
+   font-family: sans-serif-serif;
 }
 
 button{
@@ -47,6 +56,7 @@ button{
    padding:25px;
    font-size: 14px;
    background: url('images/background.png') rgba(30, 172, 160, 0.5);
+   margin:auto;
 }
 
 .gearson{

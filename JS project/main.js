@@ -6,7 +6,8 @@ const queen = {
    face: 'images/queen.png',
    name: 'the queen',
    back: 'images/back.png',
-   html: "<img class ='card' src='images/queen.png'></img>"
+   htmlFront: "<img src='images/queen.png'>",
+   htmlBack: "<img src ='images/back.png' onclick='win(), 1250'>",
 }
 
 const one = {
@@ -14,7 +15,8 @@ const one = {
    name: 1,
    onclick: lose,
    back: 'images/back.png',
-   html: "<img class ='card'  src='images/one.png'></img>"
+   htmlFront: "<img src='images/one.png'>",
+   htmlBack: "<img src ='images/back.png' onclick='lose(), 1250'>",
 }
 
 const two = {
@@ -22,9 +24,8 @@ const two = {
    name: 2,
    onclick: lose(),
    back: 'images/back.png',
-   html: "<img class ='card'  src='images/two.png'></img>"
+   htmlBack: "<img src ='images/back.png' onclick='lose(), 1250'>",
 }
-
 
 //cards gop into array to be sorted etc...
 const cards = [queen, one, two];
@@ -40,7 +41,7 @@ window.addEventListener("load", init)
 //init function
 function init() {
 
-   console.log(cards[1]);
+   dealCards()
    //add onlcick event to the settings gear
    document.getElementById("settingsGear").addEventListener("click", showMenu)
 
@@ -58,13 +59,43 @@ function init() {
 
 function dealCards() {
 
-   //shuffle the cards
-   cards.sort()
+   //empty the cards container
+   document.getElementById('cards').innerHTML =" "
+   //get current date
+   let now = new Date()
+   //extract seconds from current date
+      now=  now.getMilliseconds();
 
-      // add each card into the cards div
-   for (card in cards) {
-      document.getElementById('cards').innerHTML += card.html
+   cards.sort()
+   //shuffle the cards - kind of
+   if (now >=0 && now < 333 ){
+      shuffler = 0
+   } else if (now >=333 && now < 666){
+      shuffler = 1
+   }else {
+      shuffler = 2
    }
+
+      console.log(now)
+
+   //shuffle the cards
+   switch(shuffler) {
+      case 0:
+      document.getElementById('cards').innerHTML += cards[0].htmlBack
+      document.getElementById('cards').innerHTML += cards[1].htmlBack
+      document.getElementById('cards').innerHTML += cards[2].htmlBack
+          break;
+      case 1:
+      document.getElementById('cards').innerHTML += cards[1].htmlBack
+      document.getElementById('cards').innerHTML += cards[0].htmlBack
+      document.getElementById('cards').innerHTML += cards[2].htmlBack
+          break;
+      default:
+      document.getElementById('cards').innerHTML += cards[2].htmlBack
+      document.getElementById('cards').innerHTML += cards[1].htmlBack
+      document.getElementById('cards').innerHTML += cards[0].htmlBack
+      break;
+  }
 }
 
 //themes
@@ -100,6 +131,6 @@ function queensay(phrase) {
 
 // menu
 function showMenu() {
-   document.getElementById('settingsGear').src == "images/gearson,png"
+   document.getElementById('settingsGear').classList.toggle('hidden');
    document.getElementById('menu').classList.toggle('hidden');
 }
