@@ -1,3 +1,57 @@
-body{
-   background: black;
+
+.themeRed{
+   background: rgb(107, 28, 28);
+}
+
+.themeBlue{
+   background: rgb(39, 39, 223);
+}
+
+.themeBlack{
+   background: rgb(27, 27, 27);
+}
+
+.hasborders{
+   border: 1px solid white;
+}
+
+.hidden{
+   display:none;
+}
+
+#settingsGear{
+   float:right;
+   width: 56px;
+}
+
+#cards{
+   width:60%;
+   margin:auto;
+   background: url('images/background.png') rgba(30, 172, 160, 0.5);
+   display:flex;
+   justify-content: space-around;
+   flex-wrap: wrap;
+}
+
+#queenSpeach{
+   float:right;
+   position:fixed;
+   margin-top: 400px;
+   margin-left: 85%;;
+}
+
+button{
+   -webkit-border-radius: 25px;
+   -moz-border-radius: 25px;
+   border-radius: 25px;
+   padding:25px;
+   font-size: 14px;
+   background: url('images/background.png') rgba(30, 172, 160, 0.5);
+}
+
+.gearson{
+   background-image: url('images/gearson.png');
+}
+.gearsoff{
+   background-image: url('images/gearsoff.png');
 }
