@@ -1,17 +1,19 @@
-*{
-   margin: 0;
-   font-family: 'Quicksand', sans-serif;
-   list-style-type: none;
-   padding:0;
-   box-sizing: border-box;
+* {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  list-style-type: none;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{background:black;}
+body {
+  background: black;
+}
 
-.container{
+.container {
   background: white;
   margin: auto;
-  width:100%;
+  width: 100%;
   transition: 1s linear;
 }
 
@@ -19,173 +21,189 @@ body{background:black;}
 ** h tags
 *********/
 
-h1, h2, h3, h4, h5{font-family: 'Cabin', sans-serif;}
-
-h1{
-    font-size: 3em;
-    font-variant: small-caps;
-    line-height: 0;
-
+h1, h2, h3, h4, h5 {
+  font-family: 'Cabin', sans-serif;
 }
 
-h2{
-    font-size: 3em;
-    color: grey;
-    padding: 1em, 0, 0, 1em;
+h1 {
+  font-size: 3em;
+  font-variant: small-caps;
+  line-height: 0;
 }
 
-
+h2 {
+  font-size: 3em;
+  color: grey;
+  padding: 1em, 0, 0, 1em;
+}
 
 /*******
 ** header, nav menu
 ********/
-#menu{
-  width:100%;
-    transition: 1s linear;
+
+#menu {
+  width: 100%;
+  transition: 1s linear;
 }
 
 /*hides the menu when active */
-.hidden{display: none;}
 
-#close-button{
-  cursor:pointer;
+.hidden {
+  display: none;
+}
+
+#close-button {
+  cursor: pointer;
   text-align: right;
 }
 
-#menu ul{list-style-type: none;}
+#menu ul {
+  list-style-type: none;
+}
 
-#menu ul li{
-  width:100%;
-  background-color:black;
-  color:white;
-  padding:1em;
+#menu ul li {
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 1em;
   display: inline-block;
   border: 1px 1px 0 1px, solid grey;
 }
 
-
-
-header{
-   width:100%;
-   background-color:black;
-   color: white;
-   padding: 1em;
+header {
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 1em;
 }
 
-header #menu-button, header h1{display: inline-block}
-header #menu-button{font-size: 1.8em;}
+header #menu-button, header h1 {
+  display: inline-block
+}
 
+header #menu-button {
+  font-size: 1.8em;
+}
 
 /**********
 ** main body
 **********/
 
-article p{
-    color: grey;
-    padding: 1.3em;
-    column-count: 1;
+article p {
+  color: grey;
+  padding: 1.3em;
+  column-count: 1;
 }
-
 
 /***********
 ** Nav (I did the cast with a single color gradient in the background)
 ************/
 
-nav ul li{
- width:100%;
- padding: 1em;
- display: inline-block;
- font-size: 2.5em;
-
+nav ul li {
+  width: 100%;
+  padding: 1em;
+  display: inline-block;
+  font-size: 2.5em;
 }
 
-nav ul li:nth-child(1){
-  background:
-    linear-gradient(rgba(128,128,128, 0.8), rgba(128, 128, 128, 0.8)),
-    url(images/1.jpg);
-   background-position:center;
- }
-nav ul li:nth-child(1):hover{
-  background:linear-gradient(rgba(255, 0, 0, 0.3), rgba(255, 0, 0, .3)), url(images/1.jpg);
-  background-position:center;
- }
+nav ul li:nth-child(1) {
+  background: linear-gradient(rgba(128, 128, 128, 0.8), rgba(128, 128, 128, 0.8)), url(images/1.jpg);
+  background-position: center;
+}
 
- nav ul li:nth-child(2){
-   background: linear-gradient(rgba(128,128,128, 0.8), rgba(128, 128, 128, 0.8)) , url(images/2.jpg);
-   background-position:center;
-  }
- nav ul li:nth-child(2):hover{
-   background:linear-gradient(rgba(255, 0, 0, 0.3), rgba(255, 0, 0, .3)), url(images/2.jpg);
-   background-position:center;
-  }
-  nav ul li:nth-child(3){background: linear-gradient(rgba(128,128,128, 0.8), rgba(128, 128, 128, 0.8)) , url(images/3.jpg);
-    background-position:center;
-  }
+nav ul li:nth-child(1):hover {
+  background: linear-gradient(rgba(255, 0, 0, 0.3), rgba(255, 0, 0, .3)), url(images/1.jpg);
+  background-position: center;
+}
 
-  nav ul li:nth-child(3):hover{background:linear-gradient(rgba(255, 0, 0, 0.3), rgba(255,0,0, .3)), url(images/3.jpg);
-    background-position:center;
-  }
+nav ul li:nth-child(2) {
+  background: linear-gradient(rgba(128, 128, 128, 0.8), rgba(128, 128, 128, 0.8)), url(images/2.jpg);
+  background-position: center;
+}
 
+nav ul li:nth-child(2):hover {
+  background: linear-gradient(rgba(255, 0, 0, 0.3), rgba(255, 0, 0, .3)), url(images/2.jpg);
+  background-position: center;
+}
 
+nav ul li:nth-child(3) {
+  background: linear-gradient(rgba(128, 128, 128, 0.8), rgba(128, 128, 128, 0.8)), url(images/3.jpg);
+  background-position: center;
+}
+
+nav ul li:nth-child(3):hover {
+  background: linear-gradient(rgba(255, 0, 0, 0.3), rgba(255, 0, 0, .3)), url(images/3.jpg);
+  background-position: center;
+}
 
 /**********
 ** social media icons
 **********/
 
 aside .social {
-    display: block;
-    width:18px;
-        background-color:black;
+  display: block;
+  width: 18px;
+  background-color: black;
 }
 
-aside{
-    float:right;
-
-
+aside {
+  float: right;
 }
 
 /***********
 ** Media Queries
 ************/
 
-@media only screen and (min-width : 600px) {
+@media only screen and (min-width: 600px) {
+  .container {
+    width: 90%;
+  }
+  h1 {
+    padding: 0;
+  }
+  article p {
+    column-count: 2;
+  }
+  #menu {
+    display: inline-block;
+  }
+  header #menu-button {
+    display: none;
+  }
+  menu ul {
+    width: 100%;
+  }
+  #menu ul li {
+    width: 25%;
+    display: inline-block;
+  }
+  nav ul li:nth-child(2), nav ul li:nth-child(3) {
+    width: 50%
+  }
+}
 
-  .container{width:90%;}
+@media only screen and (min-width: 800px) {
+  #container {
+    width: 70%;
+  }
+  article p {
+    column-count: 3;
+  }
+  nav ul li {
+    width: 33%;
+  }
+  aside {
+    top: 0;
+    position: fixed;
+  }
+  aside .social {
+    display: inline;
+  }
+}
 
-  h1{padding:0;}
-
-   article p{column-count: 2;}
-
-   #menu{display: inline-block;}
-
-   header #menu-button{display: none;}
-
-   menu ul{
-     width:100%;
-   }
-
-   #menu ul li{
-      width:25%;
-      display:inline-block;
-    }
-
-  nav ul li:nth-child(2), nav ul li:nth-child(3){width:50%}
-
-    }
-
-@media only screen and (min-width : 800px) {
-  #container{width:70%;}
-    article p{column-count: 3;}
-    nav ul li{width:33%;}
-
-    aside{
-      top:0;
-      position: fixed;
-    }
-    aside .social{display: inline;}
-        }
-
-@media only screen and (min-width : 1000px) {
-    .container{width:960px;} /* I can't test this */
-
-    }
+@media only screen and (min-width: 1000px) {
+  .container {
+    width: 960px;
+  }
+  /* I can't test this */
+}
