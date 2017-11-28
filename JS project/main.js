@@ -36,19 +36,12 @@ window.addEventListener("load", init)
 
 //init function
 function init() {
-
-  dealCards()
-
-  //theme functionality
-
-  //remove the themese that aren't black for default to be black
-  document.getElementById("body").classList.remove('themeRed')
-  document.getElementById("body").classList.remove('themeBlue')
-
   //add  event listeners to the menu items that will toggle the theme
   document.getElementById("setBlackTheme").addEventListener("click", themeBlack())
   document.getElementById("setRedTheme").addEventListener("click", themeRed())
   document.getElementById("setBlueTheme").addEventListener("click", themeBlue())
+
+  dealCards()
 }
 
 function dealCards() {
@@ -106,6 +99,7 @@ function lose() {
   reveal()
 }
 
+// find the right span element by id and make the contents the phrase passed in as argument
 function queensay(phrase) {
   setTimeout(function sayThings() {
     document.getElementById('queenSpeach').innerHTML = "<p>" + phrase + "</p>"
@@ -139,15 +133,40 @@ function reveal() {
   }
 }
 
+//************************************************************************/
+// Settings and themes
+//*************************************************************************/
+
 //settings gear
 function gearClick() {
+  //toggle both classes on/off
   document.getElementById('settingsGear').classList.toggle('gearson')
   document.getElementById('settingsGear').classList.toggle('gearsoff')
-  showMenu()
+
+  //call show menu function
+  document.getElementById('menu').classList.toggle('hidden')
 }
 
-// menu
-function showMenu() {
-  document.getElementById('settingsGear').classList.toggle('hidden')
-  document.getElementById('menu').classList.toggle('hidden')
+//menu items
+
+function toggleBorders() {
+  document.getElementById('cards').classList.toggle('hasborders')
+}
+
+function themeBlack() {
+  document.getElementById('body').classList.remove('themeRed')
+  document.getElementById('body').classList.remove('themeBlue')
+  document.getElementById('body').classList.add('themeBlack')
+}
+
+function themeBlue() {
+document.getElementById('body').classList.remove('themeRed')
+document.getElementById('body').classList.add('themeBlue')
+document.getElementById('body').classList.remove('themeBlack')
+}
+
+function themeRed() {
+document.getElementById('body').classList.add('themeRed')
+document.getElementById('body').classList.remove('themeBlue')
+document.getElementById('body').classList.remove('themeBlack')
 }

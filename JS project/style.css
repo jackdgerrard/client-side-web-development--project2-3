@@ -25,11 +25,6 @@
    display:none;
 }
 
-#settingsGear{
-   float:right;
-   width: 56px;
-}
-
 #cards{
    width:70%;
    margin:auto;
@@ -72,6 +67,7 @@ button{
 #settingsGear{
   width:60px;
   height:60px;
+  float:right;
 }
 
 .gearson{
@@ -81,4 +77,25 @@ button{
 .gearsoff{
    background-image: url('images/gearsoff.png');
       background-size: 60px;
+}
+
+#menu{
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+border: 1px solid black;
+  background-color:  white;
+  width:  240px;
+  float :right;
+  padding: 16px;
+}
+
+#menu ul{
+  list-style-type: none;
+}
+
+#menu ul li{
+  width:100%;
+  cursor: pointer;
+  ;
 }
