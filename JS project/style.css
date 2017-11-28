@@ -18,7 +18,7 @@
 }
 
 .hasborders{
-   border: 1px solid white;
+   border: 3px solid green;
 }
 
 .hidden{
@@ -50,7 +50,7 @@
 #queentainer{
    float:right;
    position:fixed;
-   margin-top: 400px;
+   margin-top: auto;
    margin-left: 85%;
 }
 
@@ -69,9 +69,16 @@ button{
    margin:auto;
 }
 
+#settingsGear{
+  width:60px;
+  height:60px;
+}
+
 .gearson{
    background-image: url('images/gearson.png');
+   background-size: 60px;
 }
 .gearsoff{
    background-image: url('images/gearsoff.png');
+      background-size: 60px;
 }

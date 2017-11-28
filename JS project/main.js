@@ -5,7 +5,6 @@
 const queen = {
   face: 'images/queen.png',
   name: 'the queen',
-  back: 'images/back.png',
   htmlFront: "<img src='images/queen.png'>",
   htmlBack: "<img src ='images/back.png' onclick='win()'>",
 }
@@ -13,7 +12,6 @@ const queen = {
 const one = {
   face: 'images/one.png',
   name: 1,
-  back: 'images/back.png',
   htmlFront: "<img src='images/one.png'>",
   htmlBack: "<img src ='images/back.png' onclick='lose()'>",
 }
@@ -21,7 +19,7 @@ const one = {
 const two = {
   face: 'images/two.png',
   name: 2,
-  back: 'images/back.png',
+  htmlFront: "<img src='images/two.png'>",
   htmlBack: "<img src ='images/back.png' onclick='lose()'>",
 }
 
@@ -29,9 +27,9 @@ const two = {
 const cards = [queen, one, two]
 let shuffler = 0
 
-//*********** */
+//************/
 // Functions
-//************ */
+//*************/
 
 //onload
 window.addEventListener("load", init)
@@ -40,8 +38,6 @@ window.addEventListener("load", init)
 function init() {
 
   dealCards()
-  //add onlcick event to the settings gear
-  document.getElementById("settingsGear").addEventListener("click", showMenu)
 
   //theme functionality
 
@@ -49,7 +45,7 @@ function init() {
   document.getElementById("body").classList.remove('themeRed')
   document.getElementById("body").classList.remove('themeBlue')
 
-  //add  event listeners to the menu items that wuill toggle the theme
+  //add  event listeners to the menu items that will toggle the theme
   document.getElementById("setBlackTheme").addEventListener("click", themeBlack())
   document.getElementById("setRedTheme").addEventListener("click", themeRed())
   document.getElementById("setBlueTheme").addEventListener("click", themeBlue())
@@ -96,55 +92,28 @@ function dealCards() {
   }
 }
 
-//themes
-function themeRed() {
-  document.getElementById('body').classList.remove('themeBlack')
-  document.getElementById('body').classList.remove('themeBlue')
-  document.getElementById('body').classList.add('themeRed')
-}
-
-function themeBlue() {
-  document.getElementById('body').classList.remove('themeBlack')
-  document.getElementById('body').classList.add('themeBlue')
-  document.getElementById('body').classList.remove('themeRed')
-}
-
-function themeBlack() {
-  document.getElementById('body').classList.add('themeBlack')
-  document.getElementById('body').classList.remove('themeBlue')
-  document.getElementById('body').classList.remove('themeRed')
-}
-
-function borders() {
-  document.getElementById('body').classList.toggle('hasborders')
-}
 
 // win/lose
 function win() {
   console.log("WINNER")
-  setTimeout(queensay('you won!'), 3000)
+  queensay('you won!')
   reveal()
-  document.getElementById('shuffle').classList.add('hidden')
 }
 
 function lose() {
   console.log("LOSER")
-  setTimeout(queensay('you lost!'), 3000)
+  queensay('you lost!')
   reveal()
-  document.getElementById('shuffle').classList.add('hidden')
 }
 
 function queensay(phrase) {
-  document.getElementById('queenSpeach').innerHTML = "<p>" + phrase + "</p>"
-  document.getElementById('shuffle').classList.add('hidden')
+  setTimeout(function sayThings() {
+    document.getElementById('queenSpeach').innerHTML = "<p>" + phrase + "</p>"
+  }, 3000)
+  setTimeout(function hideButton() {
+    document.getElementById('shuffle').classList.add('hidden')
+  }, 3000)
 }
-
-// menu
-function showMenu() {
-  document.getElementById('settingsGear').classList.toggle('hidden')
-  document.getElementById('menu').classList.toggle('hidden')
-}
-
 
 //this reveals the cards by clearing the container and then replacing the card backs with card fronts
 function reveal() {
@@ -168,4 +137,17 @@ function reveal() {
       document.getElementById('cards').innerHTML += cards[0].htmlFront
       break;
   }
+}
+
+//settings gear
+function gearClick() {
+  document.getElementById('settingsGear').classList.toggle('gearson')
+  document.getElementById('settingsGear').classList.toggle('gearsoff')
+  showMenu()
+}
+
+// menu
+function showMenu() {
+  document.getElementById('settingsGear').classList.toggle('hidden')
+  document.getElementById('menu').classList.toggle('hidden')
 }
