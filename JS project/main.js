@@ -1,36 +1,32 @@
-//*********** */
+//************************************************************************/
 // Variables -- I seperated the objects from the array for readability
-//************ */
+//*************************************************************************/
 
 const queen = {
-   face: 'images/queen.png',
-   name: 'the queen',
-   back: 'images/back.png',
-   htmlFront: "<img src='images/queen.png'>",
-   htmlBack: "<img src ='images/back.png' onclick='win()'>",
+  face: 'images/queen.png',
+  name: 'the queen',
+  back: 'images/back.png',
+  htmlFront: "<img src='images/queen.png'>",
+  htmlBack: "<img src ='images/back.png' onclick='win()'>",
 }
 
 const one = {
-   face: 'images/one.png',
-   name: 1,
-   onclick: lose,
-   back: 'images/back.png',
-   htmlFront: "<img src='images/one.png'>",
-   htmlBack: "<img src ='images/back.png' onclick='lose()'>",
+  face: 'images/one.png',
+  name: 1,
+  back: 'images/back.png',
+  htmlFront: "<img src='images/one.png'>",
+  htmlBack: "<img src ='images/back.png' onclick='lose()'>",
 }
 
 const two = {
-   face: 'images/two.png',
-   name: 2,
-   onclick: lose(),
-   back: 'images/back.png',
-   htmlBack: "<img src ='images/back.png' onclick='lose()'>",
+  face: 'images/two.png',
+  name: 2,
+  back: 'images/back.png',
+  htmlBack: "<img src ='images/back.png' onclick='lose()'>",
 }
 
 //cards gop into array to be sorted etc...
 const cards = [queen, one, two]
-
-
 let shuffler = 0
 
 //*********** */
@@ -43,118 +39,133 @@ window.addEventListener("load", init)
 //init function
 function init() {
 
-   dealCards()
-   //add onlcick event to the settings gear
-   document.getElementById("settingsGear").addEventListener("click", showMenu)
+  dealCards()
+  //add onlcick event to the settings gear
+  document.getElementById("settingsGear").addEventListener("click", showMenu)
 
-   //theme functionality
+  //theme functionality
 
-   //remove the themese that aren't black for default to be black
-   document.getElementById("body").classList.remove('themeRed')
-   document.getElementById("body").classList.remove('themeBlue')
+  //remove the themese that aren't black for default to be black
+  document.getElementById("body").classList.remove('themeRed')
+  document.getElementById("body").classList.remove('themeBlue')
 
-   //add  event listeners to the menu items that wuill toggle the theme
-   document.getElementById("setBlackTheme").addEventListener("click", themeBlack())
-   document.getElementById("setRedTheme").addEventListener("click", themeRed())
-   document.getElementById("setBlueTheme").addEventListener("click", themeBlue())
+  //add  event listeners to the menu items that wuill toggle the theme
+  document.getElementById("setBlackTheme").addEventListener("click", themeBlack())
+  document.getElementById("setRedTheme").addEventListener("click", themeRed())
+  document.getElementById("setBlueTheme").addEventListener("click", themeBlue())
 }
 
 function dealCards() {
 
-   //empty the cards container
-   document.getElementById('cards').innerHTML = " "
-   //get current date
-   let now = new Date()
-   //extract seconds from current date
-   now = now.getMilliseconds();
+  //empty the cards container
+  document.getElementById('cards').innerHTML = " "
+  //get current date
+  let now = new Date()
+  //extract seconds from current date
+  now = now.getMilliseconds();
 
-   cards.sort()
-   //shuffle the cards - kind of
-   if (now >= 0 && now < 333) {
-      shuffler = 0
-   } else if (now >= 333 && now < 666) {
-      shuffler = 1
-   } else {
-      shuffler = 2
-   }
+  cards.sort()
+  //shuffle the cards - kind of
+  if (now >= 0 && now < 333) {
+    shuffler = 0
+  } else if (now >= 333 && now < 666) {
+    shuffler = 1
+  } else {
+    shuffler = 2
+  }
 
-   console.log(now + ' -  ' + shuffler)
+  console.log(now + ' -  ' + shuffler)
 
-   //shuffle the cards
-   switch (shuffler) {
-      case 0:
-         document.getElementById('cards').innerHTML += cards[0].htmlBack
-         document.getElementById('cards').innerHTML += cards[1].htmlBack
-         document.getElementById('cards').innerHTML += cards[2].htmlBack
-         break;
-      case 1:
-         document.getElementById('cards').innerHTML += cards[1].htmlBack
-         document.getElementById('cards').innerHTML += cards[0].htmlBack
-         document.getElementById('cards').innerHTML += cards[2].htmlBack
-         break;
-      default:
-         document.getElementById('cards').innerHTML += cards[2].htmlBack
-         document.getElementById('cards').innerHTML += cards[1].htmlBack
-         document.getElementById('cards').innerHTML += cards[0].htmlBack
-         break;
-   }
+  //shuffle the cards
+  switch (shuffler) {
+    case 0:
+      document.getElementById('cards').innerHTML += cards[0].htmlBack
+      document.getElementById('cards').innerHTML += cards[1].htmlBack
+      document.getElementById('cards').innerHTML += cards[2].htmlBack
+      break;
+    case 1:
+      document.getElementById('cards').innerHTML += cards[1].htmlBack
+      document.getElementById('cards').innerHTML += cards[0].htmlBack
+      document.getElementById('cards').innerHTML += cards[2].htmlBack
+      break;
+    default:
+      document.getElementById('cards').innerHTML += cards[2].htmlBack
+      document.getElementById('cards').innerHTML += cards[1].htmlBack
+      document.getElementById('cards').innerHTML += cards[0].htmlBack
+      break;
+  }
 }
 
 //themes
 function themeRed() {
-   document.getElementById('body').classList.toggle('redTheme')
+  document.getElementById('body').classList.remove('themeBlack')
+  document.getElementById('body').classList.remove('themeBlue')
+  document.getElementById('body').classList.add('themeRed')
 }
 
 function themeBlue() {
-   document.getElementById('body').classList.toggle('blueTheme')
+  document.getElementById('body').classList.remove('themeBlack')
+  document.getElementById('body').classList.add('themeBlue')
+  document.getElementById('body').classList.remove('themeRed')
 }
 
 function themeBlack() {
-   document.getElementById('body').classList.toggle('blackTheme')
+  document.getElementById('body').classList.add('themeBlack')
+  document.getElementById('body').classList.remove('themeBlue')
+  document.getElementById('body').classList.remove('themeRed')
 }
 
 function borders() {
-   document.getElementById('body').classList.toggle('hasborders')
+  document.getElementById('body').classList.toggle('hasborders')
 }
 
 // win/lose
 function win() {
-   setTimeout(queensay('you won!'), 1800)
-   reveal()
+  console.log("WINNER")
+  setTimeout(queensay('you won!'), 3000)
+  reveal()
+  document.getElementById('shuffle').classList.add('hidden')
 }
 
 function lose() {
-   setTimeout(queensay('you lost!'), 1800)
-   reveal()
+  console.log("LOSER")
+  setTimeout(queensay('you lost!'), 3000)
+  reveal()
+  document.getElementById('shuffle').classList.add('hidden')
 }
 
 function queensay(phrase) {
-   document.getElementById('queenSpeach').innerHTML = "<p>" + phrase + "</p>"
-   document.getElementById('shuffle').classList.add('hidden')
+  document.getElementById('queenSpeach').innerHTML = "<p>" + phrase + "</p>"
+  document.getElementById('shuffle').classList.add('hidden')
 }
 
 // menu
 function showMenu() {
-   document.getElementById('settingsGear').classList.toggle('hidden')
-   document.getElementById('menu').classList.toggle('hidden')
+  document.getElementById('settingsGear').classList.toggle('hidden')
+  document.getElementById('menu').classList.toggle('hidden')
 }
 
+
+//this reveals the cards by clearing the container and then replacing the card backs with card fronts
 function reveal() {
-   switch (shuffler) {
-      case 0:
-         document.getElementById('cards').innerHTML += cards[0].htmlFront
-         document.getElementById('cards').innerHTML += cards[1].htmlFront
-         document.getElementById('cards').innerHTML += cards[2].htmlFront
-         break;
-      case 1:
-         document.getElementById('cards').innerHTML += cards[1].htmlFront
-         document.getElementById('cards').innerHTML += cards[0].htmlFront
-         document.getElementById('cards').innerHTML += cards[2].htmlFront
-         break;
-      default:
-         document.getElementById('cards').innerHTML += cards[2].htmlFront
-         document.getElementById('cards').innerHTML += cards[1].htmlFront
-         document.getElementById('cards').innerHTML += cards[0].htmlFront
-         break;
-   }
+
+  document.getElementById('cards').innerHTML = " "
+  //display cards in same way shuffler worked
+  switch (shuffler) {
+    case 0:
+      document.getElementById('cards').innerHTML += cards[0].htmlFront
+      document.getElementById('cards').innerHTML += cards[1].htmlFront
+      document.getElementById('cards').innerHTML += cards[2].htmlFront
+      break;
+    case 1:
+      document.getElementById('cards').innerHTML += cards[1].htmlFront
+      document.getElementById('cards').innerHTML += cards[0].htmlFront
+      document.getElementById('cards').innerHTML += cards[2].htmlFront
+      break;
+    default:
+      document.getElementById('cards').innerHTML += cards[2].htmlFront
+      document.getElementById('cards').innerHTML += cards[1].htmlFront
+      document.getElementById('cards').innerHTML += cards[0].htmlFront
+      break;
+  }
 }

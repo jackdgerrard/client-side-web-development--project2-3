@@ -11,6 +11,12 @@
    background: rgb(27, 27, 27);
 }
 
+#queenSpeach{
+  color:white;
+  font-size: 1em;
+  background-color: brown;
+}
+
 .hasborders{
    border: 1px solid white;
 }

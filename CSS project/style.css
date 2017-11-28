@@ -1,8 +1,8 @@
 * {
   margin: 0;
+  padding: 0;
   font-family: 'Quicksand', sans-serif;
   list-style-type: none;
-  padding: 0;
   box-sizing: border-box;
 }
 
@@ -15,19 +15,20 @@ body {
   margin: auto;
   width: 100%;
   transition: 1s linear;
+  position:relative;
 }
 
 /*******
 ** h tags
-*********/
+******************/
 
 h1, h2, h3, h4, h5 {
   font-family: 'Cabin', sans-serif;
+  font-variant: small-caps;
 }
 
 h1 {
   font-size: 3em;
-  font-variant: small-caps;
   line-height: 0;
 }
 
@@ -37,9 +38,9 @@ h2 {
   padding: 1em, 0, 0, 1em;
 }
 
-/*******
+/*************************
 ** header, nav menu
-********/
+**************************/
 
 #menu {
   width: 100%;
@@ -57,20 +58,16 @@ h2 {
   text-align: right;
 }
 
-#menu ul {
-  list-style-type: none;
-}
-
 #menu ul li {
   width: 100%;
   background-color: black;
   color: white;
   padding: 1em;
   display: inline-block;
-  border: 1px 1px 0 1px, solid grey;
 }
 
 header {
+  margin: auto;
   width: 100%;
   background-color: black;
   color: white;
@@ -85,9 +82,13 @@ header #menu-button {
   font-size: 1.8em;
 }
 
-/**********
+section{
+  background: black;
+}
+
+/*******************
 ** main body
-**********/
+*******************/
 
 article p {
   color: grey;
@@ -95,9 +96,9 @@ article p {
   column-count: 1;
 }
 
-/***********
+/**************************************************************************
 ** Nav (I did the cast with a single color gradient in the background)
-************/
+***************************************************************************/
 
 nav ul li {
   width: 100%;
@@ -136,26 +137,30 @@ nav ul li:nth-child(3):hover {
   background-position: center;
 }
 
-/**********
+/****************************
 ** social media icons
-**********/
+****************************/
 
 aside .social {
   display: block;
-  width: 18px;
+  width: 36px;
   background-color: black;
 }
 
 aside {
-  float: right;
+  margin-left: 360px;
 }
 
-/***********
+/*********************
 ** Media Queries
-************/
+********************/
+
+/****************************
+** Screens bigger than 600px
+*******************************/
 
 @media only screen and (min-width: 600px) {
-  .container {
+  .container, header {
     width: 90%;
   }
   h1 {
@@ -167,33 +172,47 @@ aside {
   #menu {
     display: inline-block;
   }
-  header #menu-button {
-    display: none;
-  }
-  menu ul {
-    width: 100%;
-  }
+
   #menu ul li {
     width: 25%;
     display: inline-block;
   }
+
+  header #menu-button, ul li#close-button {
+    display: none;
+  }
+
   nav ul li:nth-child(2), nav ul li:nth-child(3) {
     width: 50%
   }
 }
 
+/**************************
+** Screens bigger than 800px
+****************************/
+
 @media only screen and (min-width: 800px) {
-  #container {
-    width: 70%;
+  .container, header {
+    width: 75%;
   }
   article p {
     column-count: 3;
   }
-  nav ul li {
-    width: 33%;
+  nav {
+    width: 100%;
+  }
+  nav ul {
+    width: 100;
+  }
+  nav ul li:nth-child(1), nav ul li:nth-child(2) {
+    width: 33%
+  }
+  nav ul li:nth-child(3) {
+    width: 34%;
   }
   aside {
     top: 0;
+    margin-left: 60%;
     position: fixed;
   }
   aside .social {
@@ -201,9 +220,12 @@ aside {
   }
 }
 
+/****************************
+** Screens bigger than 1000px
+*******************************/
+
 @media only screen and (min-width: 1000px) {
-  .container {
+  .container, header {
     width: 960px;
   }
-  /* I can't test this */
 }

@@ -1,12 +1,15 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
+  <!-- me -->
   <title>Jack Gerrard</title>
 
+<!-- import style sheet -->
   <link rel="stylesheet" href="style.css">
+  <!-- import Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Cabin|Quicksand" rel="stylesheet">
 
   <!--[if lt IE 9]>
@@ -15,33 +18,31 @@
 </head>
 
 <body>
-
-
-  <header>
-    <button id="menu-button" onclick="toggleMenu()">Menu</button>
-    <h1>News</h1>
-  </header>
-
-  <section id="menu" class="hidden">
-    <ul>
-      <li>About Us</li>
-      <li>Contacts</li>
-      <li>FAQ</li>
-      <li>Subscriptions</li>
-      <li id="close-button" onclick="toggleMenu()">X</li>
-    </ul>
-  </section>
   <div class="container">
 
-    <nav id="nav">
+  <header> <!-- h1 and button -->
+    <button id="menu-button" onclick="toggleMenu()">Menu</button>
+    <h1>Cork News</h1>
+  </header>
+
+
+
+    <section id="menu" class="hidden"> <!-- black and white nav -->
       <ul>
-        <li>Local News</li>
-        <li>Events</li>
-        <li>Photos</li>
+        <li>About Us</li><li>Contacts</li><li>FAQ</li><li>Subscriptions</li>
+        <li id="close-button" onclick="toggleMenu()">X</li>
       </ul>
+    </section>
+
+
+
+    <nav id="nav"> <!-- coloured nav -->
+      <ul><!--
+      --><li>News</li><li>Events</li><li>Photos</li><!--
+    --></ul>
     </nav>
 
-    <article>
+    <article> <!-- main body -->
       <h2>News</h2>
 
       <p>
@@ -62,18 +63,21 @@
 
     </article>
 
-    <aside>
+    <aside> <!-- Social icons -->
       <img class="social" src="images/fb.png">
       <img class="social" src="images/gp.png">
       <img class="social" src="images/tw.png">
     </aside>
-  </div>
 
+  </div> <!-- end of container -->
+
+  <!-- script for toggle the menu -->
   <script>
   function toggleMenu() {
     var menu = document.getElementById("menu").classList.toggle("hidden");
   }
   </script>
+
 </body>
 
 </html>
